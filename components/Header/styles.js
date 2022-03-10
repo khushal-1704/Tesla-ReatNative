@@ -3,12 +3,13 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
     container: {
         position: 'absolute',
-        top: 50,
+        top: 40,
         justifyContent: 'space-between',
         zIndex: 100,
         flexDirection: 'row',
         paddingHorizontal: 15,
         width: '100%',
+
     },
     logo: {
         height: 20,
