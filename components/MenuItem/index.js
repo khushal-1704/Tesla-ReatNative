@@ -1,0 +1,15 @@
+import React from 'react'
+import { View, Text } from 'react-native';
+import styles from '../MenuItem/styles';
+
+const MenuItem = (props) => {
+    const { name, reDir } = props.item
+    console.log(props.item.name)
+    return (
+        <View style={styles.container}>
+            <Text style={styles.item}>{name}</Text>
+        </View>
+    )
+}
+
+export default MenuItem; 

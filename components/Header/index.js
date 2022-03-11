@@ -1,13 +1,36 @@
-import React from 'react'
-import { View, Text, Image } from 'react-native'
-
+import React, { useState } from 'react'
+import { View, Text, Image, Pressable } from 'react-native'
+import MenuBar from '../MenuBar'
 import styles from './styles'
 
 const Header = () => {
+    const [menuBar, setMenuBar] = useState(false)
+    const handleMLogo = () => {
+        console.warn('clicked logo')
+    }
+
+    const handleBar = () => {
+        setMenuBar(preState => !preState)
+        console.warn('button pressed')
+    }
     return (
         <View style={styles.container}>
-            <Image style={styles.logo} source={require('../../assets/images/logo.png')}></Image>
-            <Image style={styles.menu} source={require('../../assets/images/menu.png')}></Image>
+            <View>
+                <Pressable onPress={handleMLogo}>
+                    <Image style={styles.logo} source={require('../../assets/images/logo.png')} />
+                </Pressable>
+            </View>
+
+            <View>
+                <Pressable onPress={handleBar}>
+                    <Image style={styles.menu} source={require('../../assets/images/menu.png')} />
+                </Pressable>
+            </View>
+            {menuBar ?
+                <MenuBar menuBar={menuBar} handleBar={handleBar} />
+                :
+                <Text style={{ display: 'none' }}></Text>
+            }
         </View>
     )
 }
