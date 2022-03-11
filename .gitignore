@@ -9,6 +9,11 @@ npm-debug.*
 *.mobileprovision
 *.orig.*
 web-build/
+.expo-shared
+.idea
+.vscode
+app.json
+bable.config.js
 
 # macOS
 .DS_Store

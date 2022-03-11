@@ -1,19 +1,21 @@
 import React from 'react';
-import { View, Text, FlatList, Dimensions, } from 'react-native';
+import { View, Text, FlatList } from 'react-native';
 import CarItem from "../CarItem";
-
 import styles from './styles';
 import cars from './cars';
+import Header from '../Header';
 
-const CarsList = (props) => {
+
+
+const CarsList = ({ navigation }) => {
     return (
         <View style={styles.container}>
+            <Header />
             <FlatList
                 data={cars}
                 renderItem={({ item }) => <CarItem car={item} />}
                 snapToAlignment={'end'}
                 decelerationRate={'normal'}
-
             />
         </View>
     );
