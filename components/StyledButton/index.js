@@ -3,8 +3,20 @@ import { Text, View, Pressable } from 'react-native'
 import styles from './styles'
 
 const StyleButton = ({ type, content, onPress }) => {
-    const backgroundColor = type === 'primary' ? '#171A20CC' : '#FFFFFFA6';
-    const textColor = type === 'primary' ? '#FFFFFF' : '#171A20CC';
+    let backgroundColor, textColor;
+    switch (type) {
+        case 'primary':
+            backgroundColor = '#171A20CC';
+            textColor = '#FFF'
+            break
+        case 'secondary':
+            backgroundColor = '#FFFFFFA6';
+            textColor = '#171A20CC'
+            break
+        case 'tertiary':
+            backgroundColor = '#3e6ae1'
+            textColor = '#FFF'
+    }
 
     return (
         <View style={styles.container}>

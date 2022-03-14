@@ -1,5 +1,3 @@
-// export default ['Existing Inventory', 'Used Inventory', 'Trade-in', 'Text Drive', 'Cybertruck', 'Roadster', 'Semi', 'Charging']
-
 export default [
     { name: "Existing Inventory", reDir: '' },
     { name: "Used Inventory", reDir: '' },
