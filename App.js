@@ -36,6 +36,3 @@ const styles = StyleSheet.create({
 
 
 });
-
-
-//why program still running after line 20 is commented , according to Docs navigation props only passed to that component which is covered with NavigationContainer
