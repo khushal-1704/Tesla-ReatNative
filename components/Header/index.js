@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { View, Text, Image, Pressable } from 'react-native'
 import MenuBar from '../MenuBar'
 import styles from './styles'
+import { StatusBar } from 'react-native'
 
 const Header = () => {
     const [menuBar, setMenuBar] = useState(false)
@@ -15,6 +16,7 @@ const Header = () => {
     }
     return (
         <View style={styles.container}>
+            <StatusBar barStyle="default" hidden={false} />
             <View>
                 <Pressable onPress={handleMLogo}>
                     <Image style={styles.logo} source={require('../../assets/images/logo.png')} />

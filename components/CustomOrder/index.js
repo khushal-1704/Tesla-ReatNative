@@ -1,12 +1,12 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, Button, ImageBackground } from 'react-native'
+import styles from './styles'
 
-const CustomOrder = () => {
+const CustomOrder = ({ navigation }) => {
+    console.log(navigation)
     return (
-        <View>
-            <Text>
-                Why same ordinary car , Customize your Tesla
-            </Text>
+        <View style={styles.container}>
+            <ImageBackground source={require('../../assets/images/Model3.jpeg')} style={styles.image} />
         </View>
     )
 }

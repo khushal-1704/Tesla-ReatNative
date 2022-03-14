@@ -1,5 +1,6 @@
 export default [{
   name: 'Model S',
+  tagline: 'Order Online for',
   tagline: 'Starting at $69,420',
   image: require('../../assets/images/ModelS.jpeg'), key: 1
 

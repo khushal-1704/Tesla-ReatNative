@@ -2,9 +2,15 @@ import React from 'react';
 import { View, Text, ImageBackground } from 'react-native';
 import styles from './styles';
 import StyleButton from '../StyledButton';
+import { useNavigation } from '@react-navigation/native';
 
 const CarItem = (props) => {
     const { name, tagline, taglineCTA, image, key } = props.car;
+    const navigation = useNavigation()
+    const handleOnPress = () => {
+        navigation.navigate('Customize', { id: key })
+        console.warn('CLicked')
+    }
     return (
         <View style={styles.carContainer} key={key}>
             <ImageBackground source={image} style={styles.image} />
@@ -23,15 +29,15 @@ const CarItem = (props) => {
                 <StyleButton
                     type='primary'
                     content={'Custom Order'}
-                    onPress={() => {
-                        console.warn('Custom order was pressed')
-                    }} />
+                    onPress={handleOnPress}
+                />
                 <StyleButton
                     type='secondary'
                     content={'Existing Inventory'}
                     onPress={() => {
-                        console.warn('Existing Inventory was pressed')
-                    }} />
+                        navigation.navigate('Inventory')
+                    }}
+                />
             </View>
         </View>
     )

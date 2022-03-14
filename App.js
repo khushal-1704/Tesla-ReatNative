@@ -1,22 +1,26 @@
 import React from 'react'
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import CarsList from './components/CarsList';
-import Header from './components/Header'
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import CustomOrder from './components/CustomOrder';
+import ExistingInventory from './components/ExistingInventory'
+import CarsItem from './components/CarItem'
 
-
-
+const Stack = createNativeStackNavigator();
 
 export default function App() {
 
-
   return (
-    <View style={styles.container}>
-      <Header />
-      <CarsList />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName='Cars'>
+        <Stack.Screen name="Cars" component={CarsList} options={{ headerShown: false }} />
+        <Stack.Screen name="Customize" component={CustomOrder} />
+        <Stack.Screen name="Inventory" component={ExistingInventory} />
+        <Stack.Screen name="CarsItem" component={CarsItem} />
+      </Stack.Navigator>
+    </NavigationContainer>
+
   )
 }
 
